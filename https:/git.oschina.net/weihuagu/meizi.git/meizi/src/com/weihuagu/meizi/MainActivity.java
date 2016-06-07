@@ -3,17 +3,18 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+
+import com.weihuagu.model.Images;
 import com.weihuagu.view.PagerAdapter;
 import android.os.Bundle;
 import android.view.Menu;
 
 
+
 public class MainActivity extends AppCompatActivity {
 	 private Toolbar mToolBar;
-	 private static final String[] tabTitles = new String[]{"小清新", "文艺范",
-	            "大长腿", "黑丝袜", "小翘臀", "大胸妹"};
-	  private static final String[] tabIds = new String[]{"4", "5", "3", "7",
-	            "6", "2"};
+	 private static final String[] tabTitles = Images.tabIds;
+	  private static final String[] tabIds = Images.tabTitles;
 	  
 	  private void setupViewPager(ViewPager viewPager) {
 	        PagerAdapter adapter = new PagerAdapter(this.getSupportFragmentManager());
