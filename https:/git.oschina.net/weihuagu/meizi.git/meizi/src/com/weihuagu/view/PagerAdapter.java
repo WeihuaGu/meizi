@@ -1,11 +1,10 @@
 package com.weihuagu.view;
-
 import java.util.ArrayList;
 import java.util.List;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 public class PagerAdapter extends FragmentPagerAdapter {
 
 	 private final List<Fragment> mFragments = new ArrayList<Fragment>();
