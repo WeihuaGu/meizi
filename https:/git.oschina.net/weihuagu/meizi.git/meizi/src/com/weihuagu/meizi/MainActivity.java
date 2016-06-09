@@ -1,4 +1,5 @@
 package com.weihuagu.meizi;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +7,8 @@ import android.support.v7.widget.Toolbar;
 
 import com.weihuagu.model.Images;
 import com.weihuagu.view.PagerAdapter;
+
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.view.Menu;
 
@@ -13,8 +16,8 @@ import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
 	 private Toolbar mToolBar;
-	 private static final String[] tabTitles = Images.tabIds;
-	  private static final String[] tabIds = Images.tabTitles;
+	 private static final String[] tabTitles = Images.tabTitles;
+	  private static final String[] tabIds = Images.tabIds;
 	  
 	  private void setupViewPager(ViewPager viewPager) {
 	        PagerAdapter adapter = new PagerAdapter(this.getSupportFragmentManager());
@@ -31,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		//this.initUiResouces();
+		this.initUiResouces();
 	}
 
 	@Override
@@ -41,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
 		return true;
 	}
 	public void initUiResouces(){
+	    
+	        TabLayout mTabLayout = (TabLayout) findViewById(R.id.tabs);
+	        ViewPager mViewPager = (ViewPager) findViewById(R.id.viewpager);
+	        if (mViewPager != null) {
+	            this.setupViewPager(mViewPager);
+	            mTabLayout.setupWithViewPager(mViewPager);
+	        }
+	    
+
 		
 		
 	}
