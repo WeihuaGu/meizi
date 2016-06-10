@@ -1,6 +1,8 @@
 package com.weihuagu.model;
 
+import java.util.List;
+
 public interface AsyncResponse {
-	void onDataReceivedSuccess(String[] accouts);
-   void onDataReceivedFailed();
+	void onDataReceivedSuccess(List<ImageInfo> imagelist);
+    void onDataReceivedFailed();
 }

@@ -26,8 +26,10 @@ public class GridViewAdapter extends BaseAdapter {
 		// TODO Auto-generated method stub
 		return imgList.size();
 	}
-	 public void addImagList(ImageInfo imageinfo) {
-        this.imgList.add(imageinfo);
+	 public void addImagList(List<ImageInfo> img) {
+		for(int i=0;i<img.size();i++){
+        this.imgList.add(img.get(i));
+		}
      }
     public void setContext(Context context){
     	this.mContext=context;
