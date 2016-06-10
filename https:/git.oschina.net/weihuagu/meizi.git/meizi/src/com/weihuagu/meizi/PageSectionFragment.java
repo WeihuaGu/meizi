@@ -35,6 +35,7 @@ public class PageSectionFragment extends Fragment implements  AsyncResponse{
 	        super.onCreate(savedInstanceState);
 	        if ((savedInstanceState != null) && savedInstanceState.containsKey(KEY_CONTENT)) {
 	            mCategoryId = savedInstanceState.getString(KEY_CONTENT);
+	            this.getImageData();
 	        }
 	}
 	 @Override
@@ -49,7 +50,6 @@ public class PageSectionFragment extends Fragment implements  AsyncResponse{
 	        this.mgridlist=(GridViewWithHeaderAndFooter) view.findViewById(R.id.gridlist);
 	       // View headerView = inflater.inflate(R.layout.grid_header_view, container, false);
 	        //this.mgridlist.addHeaderView(headerView);
-	       this.getImageData();
 	        return view;
 	    }
 		@Override
