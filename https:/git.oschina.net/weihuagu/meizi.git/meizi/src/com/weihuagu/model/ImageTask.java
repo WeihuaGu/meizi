@@ -18,8 +18,9 @@ public class ImageTask extends AsyncTask<String, Void, List<ImageInfo>> {
 	protected List<ImageInfo> doInBackground(String ... mCategoryId) {
 		// TODO Auto-generated method stub
 		 final String pageUrl = URL + mCategoryId[0] + "&pager_offset=" + pageNum;
-		Images images=new Images();
-		return images.getAllImages(pageUrl);
+		//Images images=new Images();
+		//return images.getAllImages(pageUrl);
+		 return null;
 	}
 	
 	@Override

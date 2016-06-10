@@ -35,8 +35,9 @@ public class PageSectionFragment extends Fragment implements  AsyncResponse{
 	        super.onCreate(savedInstanceState);
 	        if ((savedInstanceState != null) && savedInstanceState.containsKey(KEY_CONTENT)) {
 	            mCategoryId = savedInstanceState.getString(KEY_CONTENT);
-	            this.getImageData();
+	          
 	        }
+	        this.getImageData();
 	}
 	 @Override
 	    public void onSaveInstanceState(Bundle outState) {
@@ -61,12 +62,16 @@ public class PageSectionFragment extends Fragment implements  AsyncResponse{
 						this.imgList.add(imagelist.get(i));
 						}	
 				}
+				Toast toast=Toast.makeText(getActivity(), "test", Toast.LENGTH_SHORT); 
+				toast.show();             
 				//load adapter
+				/**
 				this.mContext=getActivity();
 				this.mAdapter=new GridViewAdapter();
 				this.mAdapter.setContext(this.mContext);
 				this.mAdapter.addImagList(this.imgList);
 				this.mgridlist.setAdapter(this.mAdapter);
+				**/
 				
 			}
 			

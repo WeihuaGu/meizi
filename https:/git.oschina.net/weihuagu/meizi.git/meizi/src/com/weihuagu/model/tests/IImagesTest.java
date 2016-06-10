@@ -1,7 +1,10 @@
 package com.weihuagu.model.tests;
 
+import java.util.List;
+
 import org.junit.Test;
 
+import com.weihuagu.model.ImageInfo;
 import com.weihuagu.model.Images;
 
 import junit.framework.TestCase;
@@ -14,8 +17,14 @@ public class IImagesTest extends TestCase {
 	}
 	
 	@Test
-	public void getAllImages(){
-		assertEquals("youku","youku");
+	public void testgetAllImages(){
+	
+				List<ImageInfo> imags=img.getAllImages(URL);
+				assertNotNull(imags);
+				System.out.println(imags.size());
+				System.out.println(imags.get(0).getImgTitle());
+				System.out.println(imags.get(1).getImgTitle());
+		
 		
 	}
 
