@@ -3,10 +3,11 @@ package com.weihuagu.model;
 import java.util.List;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 public class ImageTask extends AsyncTask<String, Void, List<ImageInfo>> {
 	 private static final String URL = "http://www.dbmeinv.com/dbgroup/show.htm?cid=";
-	 private int pageNum=5;
+	 private int pageNum=2;
 	 public AsyncResponse asyncResponse;  
 	 
      public void setOnAsyncResponse(AsyncResponse asyncResponse)
@@ -17,10 +18,12 @@ public class ImageTask extends AsyncTask<String, Void, List<ImageInfo>> {
 	@Override
 	protected List<ImageInfo> doInBackground(String ... mCategoryId) {
 		// TODO Auto-generated method stub
-		 final String pageUrl = URL + mCategoryId[0] + "&pager_offset=" + pageNum;
-		//Images images=new Images();
-		//return images.getAllImages(pageUrl);
-		 return null;
+		String pageUrl = URL + mCategoryId[0] + "&pager_offset=" + pageNum;
+		Log.v("rundebug", pageUrl);
+		Images images=new Images();
+		List<ImageInfo> imgs=images.getAllImages(pageUrl);
+		Log.v("rundebug", imgs.get(0).getImgTitle());
+		return imgs;
 	}
 	
 	@Override

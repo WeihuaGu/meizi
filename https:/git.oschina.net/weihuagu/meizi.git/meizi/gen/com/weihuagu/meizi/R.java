@@ -2769,11 +2769,13 @@ containing a value of this type.
         public static final int abc_textfield_search_material=0x7f02004a;
         public static final int design_fab_background=0x7f02004b;
         public static final int design_snackbar_background=0x7f02004c;
-        public static final int ic_launcher=0x7f02004d;
-        public static final int notification_template_icon_bg=0x7f02004e;
+        public static final int girl=0x7f02004d;
+        public static final int ic_launcher=0x7f02004e;
+        public static final int notification_template_icon_bg=0x7f02004f;
     }
     public static final class id {
         public static final int action0=0x7f090078;
+        public static final int action_about=0x7f090086;
         public static final int action_bar=0x7f090059;
         public static final int action_bar_activity_content=0x7f090003;
         public static final int action_bar_container=0x7f090058;
@@ -2788,7 +2790,6 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f090056;
         public static final int action_mode_bar_stub=0x7f090055;
         public static final int action_mode_close_button=0x7f09003b;
-        public static final int action_settings=0x7f090086;
         public static final int action_vote=0x7f090085;
         public static final int activity_chooser_view_content=0x7f09003c;
         public static final int alertTitle=0x7f090048;
@@ -2835,8 +2836,8 @@ containing a value of this type.
         public static final int icon=0x7f090041;
         public static final int ifRoom=0x7f09001c;
         public static final int image=0x7f09003e;
-        public static final int img=0x7f090077;
-        public static final int img_title=0x7f090076;
+        public static final int img=0x7f090076;
+        public static final int img_title=0x7f090077;
         public static final int info=0x7f090083;
         public static final int left=0x7f09002e;
         public static final int line1=0x7f09007d;

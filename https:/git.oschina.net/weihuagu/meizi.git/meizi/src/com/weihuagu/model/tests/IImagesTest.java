@@ -7,6 +7,7 @@ import org.junit.Test;
 import com.weihuagu.model.ImageInfo;
 import com.weihuagu.model.Images;
 
+import android.util.Log;
 import junit.framework.TestCase;
 
 public class IImagesTest extends TestCase {
@@ -21,10 +22,8 @@ public class IImagesTest extends TestCase {
 	
 				List<ImageInfo> imags=img.getAllImages(URL);
 				assertNotNull(imags);
-				System.out.println(imags.size());
-				System.out.println(imags.get(0).getImgTitle());
-				System.out.println(imags.get(1).getImgTitle());
-		
+				Log.v("outdebug", imags.get(0).getImgTitle());
+				Log.v("outdebug", imags.get(1).getImgTitle());
 		
 	}
 

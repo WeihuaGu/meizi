@@ -11,7 +11,7 @@
     <instrumentation android:targetPackage="com.weihuagu.meizi" android:name="android.test.InstrumentationTestRunner"></instrumentation>
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/girl"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
          <uses-library android:name="android.test.runner" />
@@ -22,6 +22,13 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         <activity
+            android:name=".AboutActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+               
             </intent-filter>
         </activity>
     </application>

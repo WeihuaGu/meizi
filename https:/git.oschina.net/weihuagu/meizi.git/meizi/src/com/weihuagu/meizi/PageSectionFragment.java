@@ -1,5 +1,6 @@
 package com.weihuagu.meizi;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.weihuagu.model.AsyncResponse;
@@ -22,7 +23,7 @@ public class PageSectionFragment extends Fragment implements  AsyncResponse{
 	 private Context mContext;
 	 private String mCategoryId=null;
 	 private GridViewWithHeaderAndFooter mgridlist=null;
-	 private List<ImageInfo> imgList;
+	 private List<ImageInfo> imgList=new ArrayList<ImageInfo>();
 	 private GridViewAdapter mAdapter=null;
 	 private static final String KEY_CONTENT = "PageSectionFragment:CategoryId";
 	 public static PageSectionFragment newInstance(String categoryId) {
@@ -37,7 +38,7 @@ public class PageSectionFragment extends Fragment implements  AsyncResponse{
 	            mCategoryId = savedInstanceState.getString(KEY_CONTENT);
 	          
 	        }
-	        this.getImageData();
+	       
 	}
 	 @Override
 	    public void onSaveInstanceState(Bundle outState) {
@@ -51,31 +52,29 @@ public class PageSectionFragment extends Fragment implements  AsyncResponse{
 	        this.mgridlist=(GridViewWithHeaderAndFooter) view.findViewById(R.id.gridlist);
 	       // View headerView = inflater.inflate(R.layout.grid_header_view, container, false);
 	        //this.mgridlist.addHeaderView(headerView);
+	        this.getImageData();
 	        return view;
 	    }
 		@Override
 		public void onDataReceivedSuccess(List<ImageInfo> imagelist) {
 			// TODO Auto-generated method stub
+	
 			if(imagelist!=null){
 				for(int i=0;i<imagelist.size();i++){
 					if(imagelist.get(i)!=null){
-						this.imgList.add(imagelist.get(i));
-						}	
+					this.imgList.add(imagelist.get(i));
+					}
+						
 				}
-				Toast toast=Toast.makeText(getActivity(), "test", Toast.LENGTH_SHORT); 
-				toast.show();             
 				//load adapter
-				/**
+				
 				this.mContext=getActivity();
 				this.mAdapter=new GridViewAdapter();
 				this.mAdapter.setContext(this.mContext);
 				this.mAdapter.addImagList(this.imgList);
 				this.mgridlist.setAdapter(this.mAdapter);
-				**/
-				
-			}
-			
-			
+				}
+				  
 		}
 		@Override
 		public void onDataReceivedFailed() {

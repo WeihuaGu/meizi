@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">妹子</string>
+    <string name="app_name">妹子图</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
      <string name="about_feedback">你可以在我的邮箱反馈：weihuagu_work@163.com.</string>
-     <string name="iconattribution">Icon made by </string>
+     <string name="iconattribution">Icon made by Freepik from www.flaticon.com </string>
      <string name="action_vote">快来评价</string>
     <string name="action_about">关于</string>
       <string name="appPkg">test112345</string>
