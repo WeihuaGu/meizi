@@ -22,7 +22,6 @@ public class ImageTask extends AsyncTask<String, Void, List<ImageInfo>> {
 		Log.v("rundebug", pageUrl);
 		Images images=new Images();
 		List<ImageInfo> imgs=images.getAllImages(pageUrl);
-		Log.v("rundebug", imgs.get(0).getImgTitle());
 		return imgs;
 	}
 	
