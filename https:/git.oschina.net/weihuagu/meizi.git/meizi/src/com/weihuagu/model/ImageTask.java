@@ -7,7 +7,7 @@ import android.util.Log;
 
 public class ImageTask extends AsyncTask<String, Void, List<ImageInfo>> {
 	 private static final String URL = "http://www.dbmeinv.com/dbgroup/show.htm?cid=";
-	 private int pageNum=2;
+	 private int pageNum=1;
 	 public AsyncResponse asyncResponse;  
 	 
      public void setOnAsyncResponse(AsyncResponse asyncResponse)

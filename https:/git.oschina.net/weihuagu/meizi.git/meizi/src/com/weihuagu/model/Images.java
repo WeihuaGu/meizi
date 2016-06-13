@@ -16,9 +16,8 @@ public class Images implements IImages{
     public  static final String[] tabIds = new String[]{"4", "5", "3", "7",
             "6", "2"};
      **/
-	public static final String[] tabTitles = new String[]{"小清新", "文艺范",
-            "大长腿", "黑丝袜",  "大胸妹"};
-    public  static final String[] tabIds = new String[]{"4", "5", "3", "7", "2"};
+	public static final String[] tabTitles = new String[]{ "小清新", "文艺范"};
+    public  static final String[] tabIds = new String[]{"4", "5"};
 	public List<ImageInfo> getAllImages(String pageUrl) {
         try {
             Document doc = Jsoup.connect(pageUrl)

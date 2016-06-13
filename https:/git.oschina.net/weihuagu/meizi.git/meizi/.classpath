@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="src" output="bin/classes" path="src">
+	<classpathentry kind="src" path="src">
 		<attributes>
 			<attribute name="ignore_optional_problems" value="true"/>
 		</attributes>
