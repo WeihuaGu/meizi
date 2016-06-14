@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.weihuagu.model.Images;
+import com.weihuagu.model.TopitImage;
 import com.weihuagu.view.PagerAdapter;
 import com.weihuagu.meizi.AboutActivity;
 import com.weihuagu.meizi.R;
@@ -22,17 +23,24 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 	 private Toolbar mToolBar;
-	 private static final String[] tabTitles = Images.tabTitles;
-	  private static final String[] tabIds = Images.tabIds;
+	 private static final String[] ToppittabTitles = TopitImage.tabTitles;
+	 private static final String[] ToppittabIds = TopitImage.tabIds;
+	 private static final String[] DbmeinvtabTitles = Images.tabTitles;
+	 private static final String[] DbmeinvtabIds = Images.tabIds;
+	 
 	  
 	  private void setupViewPager(ViewPager viewPager) {
 	        PagerAdapter adapter = new PagerAdapter(this.getSupportFragmentManager());
-	        int mCount = tabTitles.length;
-	        for (int i = 0; i < mCount; i++) {
-	        	Fragment mfragment=PageSectionFragment.newInstance(tabIds[i]);
-	            adapter.addFragment(mfragment, tabTitles[i]);
+	        for (int i = 0; i < ToppittabTitles.length; i++) {
+	        	Fragment mfragment=PageSectionFragment.newInstance(ToppittabIds[i],"topit");
+	            adapter.addFragment(mfragment, ToppittabTitles[i]);
 	        }
-
+	        for (int i = 0; i < ToppittabTitles.length; i++) {
+	        	Fragment mfragment=PageSectionFragment.newInstance(ToppittabIds[i],"dbmeinv");
+	            adapter.addFragment(mfragment, ToppittabTitles[i]);
+	        }
+	        
+	        
 	        viewPager.setAdapter(adapter);
 	    }
 

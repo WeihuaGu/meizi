@@ -18,8 +18,10 @@ public class Images implements IImages{
      **/
 	public static final String[] tabTitles = new String[]{ "小清新", "文艺范"};
     public  static final String[] tabIds = new String[]{"4", "5"};
-	public List<ImageInfo> getAllImages(String pageUrl) {
+    private static final String pageUrl = "http://www.dbmeinv.com/dbgroup/show.htm?cid=";
+	public List<ImageInfo> getAllImages(String  category) {
         try {
+        	String pageUrl=this.pageUrl+category;
             Document doc = Jsoup.connect(pageUrl)
                     .timeout(10000)
                     .post();

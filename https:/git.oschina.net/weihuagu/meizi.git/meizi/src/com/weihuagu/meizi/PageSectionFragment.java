@@ -22,13 +22,15 @@ import android.widget.Toast;
 public class PageSectionFragment extends Fragment implements  AsyncResponse{
 	 private Context mContext;
 	 private String mCategoryId=null;
+	 private String mSource=null;
 	 private GridViewWithHeaderAndFooter mgridlist=null;
 	 private List<ImageInfo> imgList=new ArrayList<ImageInfo>();
 	 private GridViewAdapter mAdapter=null;
 	 private static final String KEY_CONTENT = "PageSectionFragment:CategoryId";
-	 public static PageSectionFragment newInstance(String categoryId) {
+	 public static PageSectionFragment newInstance(String categoryId,String source) {
         PageSectionFragment fragment = new PageSectionFragment();
         fragment.mCategoryId = categoryId;
+        fragment.mSource=source;
         return fragment;
     }
 	 @Override
@@ -87,7 +89,7 @@ public class PageSectionFragment extends Fragment implements  AsyncResponse{
 	        if (Validator.isEffective(mCategoryId)) {
 	        	ImageTask mtask = new ImageTask();
 	    		mtask.setOnAsyncResponse(this);
-	    		mtask.execute(this.mCategoryId);
+	    		mtask.execute(this.mSource,this.mCategoryId);
 	        
 	        }
 	        

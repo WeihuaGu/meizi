@@ -16,12 +16,12 @@ public class ImageTask extends AsyncTask<String, Void, List<ImageInfo>> {
      }
 
 	@Override
-	protected List<ImageInfo> doInBackground(String ... mCategoryId) {
+	protected List<ImageInfo> doInBackground(String ... categorylist) {
 		// TODO Auto-generated method stub
-		String pageUrl = URL + mCategoryId[0] + "&pager_offset=" + pageNum;
-		Log.v("rundebug", pageUrl);
-		Images images=new Images();
-		List<ImageInfo> imgs=images.getAllImages(pageUrl);
+		String source=categorylist[0];
+		String category=categorylist[1];
+		IImages images=new ImageFactory().factory(source);
+		List<ImageInfo> imgs=images.getAllImages(category);
 		return imgs;
 	}
 	
