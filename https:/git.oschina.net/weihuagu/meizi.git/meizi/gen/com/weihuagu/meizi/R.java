@@ -2775,7 +2775,9 @@ containing a value of this type.
     }
     public static final class id {
         public static final int action0=0x7f090078;
-        public static final int action_about=0x7f090086;
+        public static final int action_about=0x7f090088;
+        public static final int action_ad=0x7f090086;
+        public static final int action_adnone=0x7f090087;
         public static final int action_bar=0x7f090059;
         public static final int action_bar_activity_content=0x7f090003;
         public static final int action_bar_container=0x7f090058;
@@ -3076,9 +3078,11 @@ containing a value of this type.
         public static final int abc_toolbar_collapse_description=0x7f0a0004;
         public static final int about_feedback=0x7f0a001a;
         public static final int action_about=0x7f0a001d;
+        public static final int action_ad=0x7f0a001e;
+        public static final int action_adnone=0x7f0a001f;
         public static final int action_settings=0x7f0a0019;
         public static final int action_vote=0x7f0a001c;
-        public static final int appPkg=0x7f0a001e;
+        public static final int appPkg=0x7f0a0020;
         public static final int app_name=0x7f0a0017;
         /**  The class name to the ScrollingChildBehavior required for AppBarLayout 
          */

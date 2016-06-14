@@ -8,6 +8,13 @@
         android:minSdkVersion="19"
         android:targetSdkVersion="23" />
    <uses-permission android:name="android.permission.INTERNET"/>
+   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+  <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <instrumentation android:targetPackage="com.weihuagu.meizi" android:name="android.test.InstrumentationTestRunner"></instrumentation>
     <application
         android:allowBackup="true"
@@ -31,6 +38,20 @@
                
             </intent-filter>
         </activity>
+        <activity
+					android:name="com.baidu.appx.uikit.BDActivity"
+					android:configChanges="orientation|screenSize" >
+		</activity>
+        <receiver android:name="com.baidu.appx.app_download.CompleteReceiver" >
+				<intent-filter>
+					<action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+					<action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />
+				</intent-filter>
+				<intent-filter>
+					<action android:name="android.intent.action.PACKAGE_ADDED" />
+					<data android:scheme="package" />
+				</intent-filter>
+		</receiver>
     </application>
 
 </manifest>
