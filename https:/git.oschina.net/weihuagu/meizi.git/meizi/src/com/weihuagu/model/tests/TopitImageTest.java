@@ -15,9 +15,9 @@ import junit.framework.TestCase;
 
 public class TopitImageTest extends TestCase {
   private String pageUrl="http://www.topit.me/tag/校服的裙摆";
-	@Before
-	public void setUp() throws Exception {
-	}
+	//@Before
+	//public void setUp() throws Exception {
+	//}
 
 	@Test
 	public void testgetAllImages(){

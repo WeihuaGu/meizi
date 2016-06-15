@@ -38,12 +38,11 @@ public class MainActivity extends AppCompatActivity {
 	  private void setupViewPager(ViewPager viewPager) {
 		
 	        PagerAdapter adapter = new PagerAdapter(this.getSupportFragmentManager());
-	        /**
+	
 	        for (int i = 0; i < ToppittabTitles.length; i++) {
 	        	Fragment mfragment=PageSectionFragment.newInstance(ToppittabIds[i],"topit");
 	            adapter.addFragment(mfragment, ToppittabTitles[i]);
 	        }
-	        **/
 	        for (int i = 0; i < DbmeinvtabTitles.length; i++) {
 	        	Fragment mfragment=PageSectionFragment.newInstance(DbmeinvtabIds[i],"dbmeinv");
 	            adapter.addFragment(mfragment, DbmeinvtabTitles[i]);
