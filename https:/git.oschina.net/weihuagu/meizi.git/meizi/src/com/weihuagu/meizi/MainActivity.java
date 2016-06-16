@@ -4,9 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
-import com.weihuagu.model.Images;
-import com.weihuagu.model.TopitImage;
+import com.weihuagu.model.DbmeinvImage;
+import com.weihuagu.model.TuchongImage;
 import com.weihuagu.view.PagerAdapter;
 import com.baidu.appx.BDInterstitialAd;
 import com.weihuagu.meizi.AboutActivity;
@@ -29,19 +28,19 @@ public class MainActivity extends AppCompatActivity {
 	 private Toolbar mToolBar;
 	 private BDInterstitialAd interstitialAd=null;
 	 private SharedPreferences  Setting=null;
-	 private static final String[] ToppittabTitles = TopitImage.tabTitles;
-	 private static final String[] ToppittabIds = TopitImage.tabIds;
-	 private static final String[] DbmeinvtabTitles = Images.tabTitles;
-	 private static final String[] DbmeinvtabIds = Images.tabIds;
+	 private static final String[] TuchuangtabTitles = TuchongImage.tabTitles;
+	 private static final String[] TuchuangtabIds = TuchongImage.tabIds;
+	 private static final String[] DbmeinvtabTitles = DbmeinvImage.tabTitles;
+	 private static final String[] DbmeinvtabIds = DbmeinvImage.tabIds;
 	 
 	  
 	  private void setupViewPager(ViewPager viewPager) {
 		
 	        PagerAdapter adapter = new PagerAdapter(this.getSupportFragmentManager());
 	
-	        for (int i = 0; i < ToppittabTitles.length; i++) {
-	        	Fragment mfragment=PageSectionFragment.newInstance(ToppittabIds[i],"topit");
-	            adapter.addFragment(mfragment, ToppittabTitles[i]);
+	        for (int i = 0; i < TuchuangtabTitles.length; i++) {
+	        	Fragment mfragment=PageSectionFragment.newInstance(TuchuangtabIds[i],"tuchong");
+	            adapter.addFragment(mfragment, TuchuangtabTitles[i]);
 	        }
 	        for (int i = 0; i < DbmeinvtabTitles.length; i++) {
 	        	Fragment mfragment=PageSectionFragment.newInstance(DbmeinvtabIds[i],"dbmeinv");

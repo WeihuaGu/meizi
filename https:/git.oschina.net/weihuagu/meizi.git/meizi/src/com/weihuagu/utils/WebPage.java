@@ -3,14 +3,10 @@ package com.weihuagu.utils;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
-import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
-
 public class WebPage {
 	public static  String getWebPageByString(String pageUrl){
 		 /**HtmlUnit请求web页面*/  
-        WebClient wc = new WebClient();  
+       // WebClient wc = new WebClient();  
         return "<html><head><title>test<title></head><body>test</body></html>";
         /**
         wc.getOptions().setJavaScriptEnabled(true); //启用JS解释器，默认为true  

@@ -9,7 +9,7 @@ import org.jsoup.select.Elements;
 
 import android.util.Log;
 
-public class Images implements IImages{
+public class DbmeinvImage implements IImages{
 	/**
 	public static final String[] tabTitles = new String[]{"小清新", "文艺范",
             "大长腿", "黑丝袜", "小翘臀", "大胸妹"};
