@@ -27,7 +27,8 @@ public class TuchongImage implements IImages {
 			        .timeout(10000)
 			        .post();
 			  String title = doc.title();
-		      Elements urls = doc.select("figure.main-collage").select("img[src$=.jpg]");
+			  Elements temp=doc.select("figure.main-collage");
+		      Elements urls = temp.select("img[src$=.jpg]");
 		      if(urls.isEmpty()==true)
 	            	Log.v("outdebug","get the elements null in TuchongImage");
 	            List<ImageInfo> imgList = new ArrayList<ImageInfo>();
