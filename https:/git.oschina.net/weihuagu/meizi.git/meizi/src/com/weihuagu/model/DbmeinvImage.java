@@ -10,12 +10,6 @@ import org.jsoup.select.Elements;
 import android.util.Log;
 
 public class DbmeinvImage implements IImages{
-	/**
-	public static final String[] tabTitles = new String[]{"小清新", "文艺范",
-            "大长腿", "黑丝袜", "小翘臀", "大胸妹"};
-    public  static final String[] tabIds = new String[]{"4", "5", "3", "7",
-            "6", "2"};
-     **/
 	public static final String[] tabTitles = new String[]{ "小清新", "文艺范"};
     public  static final String[] tabIds = new String[]{"4", "5"};
     private static final String pageUrl = "http://www.dbmeinv.com/dbgroup/show.htm?cid=";
@@ -28,7 +22,7 @@ public class DbmeinvImage implements IImages{
             String title = doc.title();
             Elements urls = doc.select("img[src$=.jpg]");
             if(urls.isEmpty()==true)
-            	Log.v("outdebug","get the elements null in images");
+            	Log.v("outdebug","get the elements null in DbmeinvImage");
             List<ImageInfo> imgList = new ArrayList<ImageInfo>();
             ImageInfo imageInfo;
             for (Element url : urls) {

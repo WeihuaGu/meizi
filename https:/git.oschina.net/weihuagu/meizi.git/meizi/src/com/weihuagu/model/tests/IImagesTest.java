@@ -22,7 +22,6 @@ public class IImagesTest extends TestCase {
 	
 				List<ImageInfo> imags=img.getAllImages(URL);
 				assertNotNull(imags);
-				Log.v("outdebug", imags.get(0).getImgTitle());
 		
 	}
 
