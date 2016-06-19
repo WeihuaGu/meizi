@@ -28,7 +28,7 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-	 private String  SDK_APP_KEY="dFUqWHAm6sTNt1R3yPlrXaDPVCiTkcem";
+	 public static final String  SDK_APP_KEY="dFUqWHAm6sTNt1R3yPlrXaDPVCiTkcem";
 	 private String SDK_INTERSTITIAL_AD_ID="TAFEZmRD5ITGA9ynLunoWlCC";
 	 private String SDK_BANNER_AD_ID = "ZKMa6z9z8a5Buv2ohfxzF7cy";
 	 private Toolbar mToolBar;
