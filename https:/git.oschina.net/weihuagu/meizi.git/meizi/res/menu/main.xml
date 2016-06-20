@@ -2,8 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.weihuagu.meizi.MainActivity" >
    <item android:id="@+id/action_vote" android:title="@string/action_vote"></item>
-   <item android:id="@+id/action_ad"    android:title="@string/action_ad" ></item>  
-   <item android:id="@+id/action_adnone"    android:title="@string/action_adnone" ></item>  
    <item android:id="@+id/action_about" android:title="@string/action_about"></item>
 
 </menu>
