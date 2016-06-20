@@ -1,49 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.weihuagu.meizi"
-    android:versionCode="2"
-    android:versionName="1.1" >
+    android:versionCode="1"
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="23" />
-   <uses-permission android:name="android.permission.INTERNET"/>
-   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-  <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-  <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
-    <instrumentation android:targetPackage="com.weihuagu.meizi" android:name="android.test.InstrumentationTestRunner"></instrumentation>
+    <uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<!-- cuid需要write settings -->
+	<uses-permission android:name="android.permission.WRITE_SETTINGS"/> 
+   <!--  <instrumentation android:targetPackage="com.weihuagu.meizi" android:name="android.test.InstrumentationTestRunner"></instrumentation> -->
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/girl"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-         <uses-library android:name="android.test.runner" />
+        <!-- <uses-library android:name="android.test.runner" />-->
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.weihuagu.meizi.MainActivity"
+            android:label="@string/app_name" 
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
          <activity
-            android:name=".AboutActivity"
+            android:name="com.weihuagu.meizi.AboutActivity"
             android:label="@string/app_name" >
-            <intent-filter>
-               
+            <intent-filter>  
             </intent-filter>
         </activity>
-       <!-- 注册SDK的activity -->
+       
+        <!-- 注册SDK的activity -->
         <activity 
             android:name="com.baidu.appx.uikit.BDActivity"
             android:configChanges="orientation|screenSize" >
         </activity>
-         <receiver android:name="com.baidu.appx.app_download.CompleteReceiver" >
+        <receiver android:name="com.baidu.appx.app_download.CompleteReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
                 <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />

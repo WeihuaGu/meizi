@@ -6,6 +6,7 @@ import com.baidu.appx.BaiduAppX;
 import com.weihuagu.meizi.MainActivity;
 
 import android.util.Log;
+import android.widget.Toast;
 public class AdListener implements  BDBannerAd.BannerAdListener, BDInterstitialAd.InterstitialAdListener, BDSplashAd.SplashAdListener{
 	private String stringTag;
 	public AdListener(String tag) {
