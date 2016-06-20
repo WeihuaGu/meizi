@@ -2361,7 +2361,7 @@ containing a value of this type.
         public static final int background_floating_material_light=0x7f060009;
         public static final int background_material_dark=0x7f060006;
         public static final int background_material_light=0x7f060007;
-        public static final int black=0x7f060045;
+        public static final int black=0x7f060046;
         /**  White 50% 
          */
         public static final int bright_foreground_disabled_material_dark=0x7f06001a;
@@ -2404,7 +2404,7 @@ containing a value of this type.
         public static final int dim_foreground_material_light=0x7f06001f;
         public static final int foreground_material_dark=0x7f060004;
         public static final int foreground_material_light=0x7f060005;
-        public static final int gray=0x7f060044;
+        public static final int gray=0x7f060047;
         /**  TODO: This is 40% alpha on the default accent color. 
          */
         public static final int highlighted_text_material_dark=0x7f060024;
@@ -2461,8 +2461,8 @@ containing a value of this type.
         public static final int switch_thumb_material_light=0x7f060053;
         public static final int switch_thumb_normal_material_dark=0x7f060014;
         public static final int switch_thumb_normal_material_light=0x7f060015;
-        public static final int text_bg_color=0x7f060047;
-        public static final int window_background=0x7f060046;
+        public static final int text_bg_color=0x7f060045;
+        public static final int window_background=0x7f060044;
     }
     public static final class dimen {
         /**  Default content inset of an action bar. 
