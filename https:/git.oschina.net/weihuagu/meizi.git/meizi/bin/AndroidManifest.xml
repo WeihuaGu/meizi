@@ -7,6 +7,7 @@
         android:minSdkVersion="19"
         android:targetSdkVersion="23" />
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
    <instrumentation android:targetPackage="com.weihuagu.meizi" android:name="android.test.InstrumentationTestRunner"></instrumentation>
     
     <application
@@ -14,6 +15,7 @@
         android:icon="@drawable/girl"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
         <uses-library android:name="android.test.runner" />
         <activity
             android:name="com.weihuagu.meizi.MainActivity"
@@ -30,6 +32,7 @@
             <intent-filter>  
             </intent-filter>
         </activity>
+        <activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
     </application>
 
 </manifest>
