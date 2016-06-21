@@ -336,6 +336,7 @@ public final class R {
 		public static final int background_floating_material_light = 0x7f060009;
 		public static final int background_material_dark = 0x7f060006;
 		public static final int background_material_light = 0x7f060007;
+		public static final int black = 0x7f060045;
 		public static final int bright_foreground_disabled_material_dark = 0x7f06001a;
 		public static final int bright_foreground_disabled_material_light = 0x7f06001b;
 		public static final int bright_foreground_inverse_material_dark = 0x7f06001c;
@@ -360,6 +361,7 @@ public final class R {
 		public static final int dim_foreground_material_light = 0x7f06001f;
 		public static final int foreground_material_dark = 0x7f060004;
 		public static final int foreground_material_light = 0x7f060005;
+		public static final int gray = 0x7f060044;
 		public static final int highlighted_text_material_dark = 0x7f060024;
 		public static final int highlighted_text_material_light = 0x7f060025;
 		public static final int hint_foreground_material_dark = 0x7f060022;
