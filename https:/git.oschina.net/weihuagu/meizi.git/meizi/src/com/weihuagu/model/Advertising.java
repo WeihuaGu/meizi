@@ -1,8 +1,13 @@
 package com.weihuagu.model;
-import com.baidu.appx.BDBannerAd;
-import com.weihuagu.view.AdListener;
-import android.util.Log;
+
+import com.google.android.gms.ads.AdRequest;
 
 public class Advertising {
+	private IAdView adview=null;
+	public void loadBannerAd(IAdView adview){
+		this.adview=adview;
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adview.getAdView().loadAd(adRequest);
+	}
 	
 }

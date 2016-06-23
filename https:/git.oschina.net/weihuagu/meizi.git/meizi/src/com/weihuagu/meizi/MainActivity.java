@@ -6,7 +6,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+
+import com.weihuagu.model.Advertising;
 import com.weihuagu.model.DbmeinvImage;
+import com.weihuagu.model.IAdView;
 import com.weihuagu.model.TuchongImage;
 import com.weihuagu.view.AdListener;
 import com.weihuagu.view.PagerAdapter;
@@ -26,7 +29,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IAdView{
 	 private SharedPreferences  Setting=null;
 	 private static final String[] TuchuangtabTitles = TuchongImage.tabTitles;
 	 private static final String[] TuchuangtabIds = TuchongImage.tabIds;
@@ -57,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_main);
 		this.initSetting();
 		this.initUiResouces();
-		
+		this.showBannerAd();
 		
 	}
 	@Override
@@ -81,6 +84,11 @@ public class MainActivity extends AppCompatActivity {
 	        this.vote(getResources().getString(R.string.appPkg));
 			return true;
 		}
+		if (id == R.id.action_setting) {
+			Intent startsetting=new Intent(this,SettingActivity.class);
+			startActivity(startsetting);
+			return true;
+		}
 		if (id== R.id.action_about){
 			Intent startabout=new Intent(this,AboutActivity.class);
 			startActivity(startabout);
@@ -100,6 +108,12 @@ public class MainActivity extends AppCompatActivity {
 	}
 	public void initSetting(){
 		this.Setting=getSharedPreferences("settingfile",0);
+		SharedPreferences.Editor editor=this.Setting.edit();
+		if(Setting.contains("ad")==false){
+		editor.putBoolean("ad", true);
+		editor.commit();
+		}
+
 		
 	}
 	
@@ -120,5 +134,18 @@ public class MainActivity extends AppCompatActivity {
                Toast.makeText(this, "no broswer,can't vote the app!", Toast.LENGTH_SHORT).show();
            }
        }
+	}
+
+	@Override
+	public AdView getAdView() {
+		// TODO Auto-generated method stub
+		return (AdView ) findViewById ( R.id.adBannerView );
+	}
+	public void showBannerAd(){
+		if(this.Setting.getBoolean("ad", true)){
+		Advertising ad=new Advertising();
+		ad.loadBannerAd(this);
+		}
+		
 	}
 }

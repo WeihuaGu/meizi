@@ -12,12 +12,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" 
-        android:text="@string/about_feedback">  
+        android:text="开启广告">  
     </TextView>
-    
-     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:text="@string/iconattribution">    
-    </TextView>
+    <Switch
+	android:id="@+id/ad"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:showText="true"
+	android:textOff="off"
+	android:textOn="on" />
 </LinearLayout>

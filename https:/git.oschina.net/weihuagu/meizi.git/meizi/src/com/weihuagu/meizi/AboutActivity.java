@@ -16,9 +16,11 @@ public class AboutActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_about);
+		/**
 		AdView mAdView = (AdView ) findViewById ( R.id.adView );
 		AdRequest adRequest = new AdRequest.Builder().build();
 		Toast.makeText(this, adRequest.getContentUrl(), Toast.LENGTH_LONG).show();
 		mAdView.loadAd(adRequest);
+		**/
 	}
 }
