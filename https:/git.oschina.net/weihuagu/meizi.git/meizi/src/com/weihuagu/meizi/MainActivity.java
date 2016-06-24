@@ -1,11 +1,10 @@
 package com.weihuagu.meizi;
 import android.support.design.widget.TabLayout;
-import com.google.android.gms.ads.AdRequest ;
-import com.google.android.gms.ads.AdView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import com.weihuagu.model.Advertising;
 import com.weihuagu.model.DbmeinvImage;
@@ -26,6 +25,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -137,14 +137,24 @@ public class MainActivity extends AppCompatActivity implements IAdView{
 	}
 
 	@Override
-	public AdView getAdView() {
+	public View getAdView() {
 		// TODO Auto-generated method stub
-		return (AdView ) findViewById ( R.id.adBannerView );
+		return null;
 	}
 	public void showBannerAd(){
 		if(this.Setting.getBoolean("ad", true)){
-		Advertising ad=new Advertising();
-		ad.loadBannerAd(this);
+		BDBannerAd	bannerview=new BDBannerAd(this, "dFUqWHAm6sTNt1R3yPlrXaDPVCiTkcem", "ZKMa6z9z8a5Buv2ohfxzF7cy");
+		TextView text=new TextView(getBaseContext());
+		bannerview.setAdSize(BDBannerAd.SIZE_FLEXIBLE);
+		bannerview.setAdListener(new Advertising("Banner"));
+		Log.v("ad", "adview new");
+		ViewGroup  container = (LinearLayout)findViewById(R.id.adview_container);
+		container.addView(bannerview);
+		
+			
+			
+			
+			
 		}
 		
 	}

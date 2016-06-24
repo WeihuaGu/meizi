@@ -1,7 +1,8 @@
 package com.weihuagu.model;
-import com.google.android.gms.ads.AdView;
+
+import android.view.View;
 
 public interface IAdView {
-	public AdView getAdView();
+	public View getAdView();
 
 }

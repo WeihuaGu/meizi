@@ -5,19 +5,21 @@
     android:versionName="1.2" >
     <uses-sdk
         android:minSdkVersion="19"
-        android:targetSdkVersion="23" />
+        android:targetSdkVersion="22" />
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-   <instrumentation android:targetPackage="com.weihuagu.meizi" android:name="android.test.InstrumentationTestRunner"></instrumentation>
-    
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<!-- cuid需要write settings -->
+	<uses-permission android:name="android.permission.WRITE_SETTINGS"/> 
     <application
         android:allowBackup="true"
         android:icon="@drawable/girl"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
-        <meta-data android:name="ADMOB_PUBLISHER_ID" android:value="pub-4720896488551810" />
-        <uses-library android:name="android.test.runner" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" 
@@ -38,10 +40,23 @@
             android:label="@string/app_name">
             
         </activity>
-            
-        <activity android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:theme="@android:style/Theme.Translucent" />
+           
+         <!-- 注册SDK的activity -->
+         <activity 
+            android:name="com.baidu.appx.uikit.BDActivity"
+            android:configChanges="orientation|screenSize" >
+        </activity>
+        <receiver android:name="com.baidu.appx.app_download.CompleteReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+       
 
     </application>
 
