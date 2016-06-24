@@ -64,10 +64,6 @@ public class MainActivity extends AppCompatActivity implements IAdView{
 		
 	}
 	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-	}
-	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
@@ -119,43 +115,68 @@ public class MainActivity extends AppCompatActivity implements IAdView{
 	
 	
 	public void vote( String appPkg){
-		 Uri uri = Uri.parse("market://details?id=" + appPkg);
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        
-       //存在手机里没安装应用市场的情况，跳转会包异常，做一个接收判断
-       if (intent.resolveActivity(getPackageManager()) != null) { //可以接收
-           startActivity(intent);
-       } else { //没有应用市场，我们通过浏览器跳转到Google Play
-           intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + appPkg));
+           Intent intent = new Intent(Intent.ACTION_VIEW);
+           intent.setData(Uri.parse("http://mobile.baidu.com/item?docid=" + appPkg));
            //这里存在一个极端情况就是有些用户浏览器也没有，再判断一次
            if (intent.resolveActivity(getPackageManager()) != null) { //有浏览器
                startActivity(intent);
            } else { 
                Toast.makeText(this, "no broswer,can't vote the app!", Toast.LENGTH_SHORT).show();
            }
-       }
+       
 	}
 
+	
+	
 	@Override
 	public View getAdView() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	private BDBannerAd bannerview=null;
 	public void showBannerAd(){
 		if(this.Setting.getBoolean("ad", true)){
-		BDBannerAd	bannerview=new BDBannerAd(this, "dFUqWHAm6sTNt1R3yPlrXaDPVCiTkcem", "ZKMa6z9z8a5Buv2ohfxzF7cy");
+		bannerview=new BDBannerAd(this, "dFUqWHAm6sTNt1R3yPlrXaDPVCiTkcem", "ZKMa6z9z8a5Buv2ohfxzF7cy");
 		TextView text=new TextView(getBaseContext());
 		bannerview.setAdSize(BDBannerAd.SIZE_FLEXIBLE);
 		bannerview.setAdListener(new Advertising("Banner"));
 		Log.v("ad", "adview new");
 		ViewGroup  container = (LinearLayout)findViewById(R.id.adview_container);
 		container.addView(bannerview);
-		
-			
-			
-			
-			
 		}
 		
 	}
+	public void hideBannerAd(){
+		if (bannerview != null) {
+			ViewGroup  container = (LinearLayout)findViewById(R.id.adview_container);
+			container.removeAllViews();
+			bannerview.destroy();
+			bannerview = null;
+		}
+		
+		
+	}
+	@Override
+	protected void onDestroy() {
+		if (bannerview != null) {
+			bannerview.destroy();
+		}
+		super.onDestroy();
+	}
+	@Override
+	protected void onRestart(){
+		if(this.Setting.getBoolean("ad", true)){
+			
+			this.showBannerAd();
+		}
+		
+		if(!this.Setting.getBoolean("ad", true)){
+			this.hideBannerAd();
+			
+		}
+		super.onRestart();
+		
+	}
+	
+	
 }
