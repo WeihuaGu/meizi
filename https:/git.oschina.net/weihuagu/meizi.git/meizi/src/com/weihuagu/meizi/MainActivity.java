@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity implements IAdView{
 	@Override
 	protected void onRestart(){
 		if(this.Setting.getBoolean("ad", true)){
-			
+			if(this.bannerview==null)
 			this.showBannerAd();
 		}
 		
