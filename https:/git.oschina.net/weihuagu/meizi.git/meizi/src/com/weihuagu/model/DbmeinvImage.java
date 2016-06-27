@@ -10,8 +10,8 @@ import org.jsoup.select.Elements;
 import android.util.Log;
 
 public class DbmeinvImage implements IImages{
-	public static final String[] tabTitles = new String[]{ "小清新", "文艺范"};
-    public  static final String[] tabIds = new String[]{"4", "5"};
+	public static final String[] tabTitles = new String[]{ "小清新"};
+    public  static final String[] tabIds = new String[]{"4"};
     private static final String pageUrl = "http://www.dbmeinv.com/dbgroup/show.htm?cid=";
 	public List<ImageInfo> getAllImages(String  category) {
         try {

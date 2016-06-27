@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.weihuagu.model.Advertising;
 import com.weihuagu.model.DbmeinvImage;
+import com.weihuagu.model.DuitangImage;
 import com.weihuagu.model.IAdView;
 import com.weihuagu.model.TuchongImage;
 import com.weihuagu.view.AdListener;
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements IAdView{
 	 private static final String[] TuchuangtabIds = TuchongImage.tabIds;
 	 private static final String[] DbmeinvtabTitles = DbmeinvImage.tabTitles;
 	 private static final String[] DbmeinvtabIds = DbmeinvImage.tabIds;
+	 private static final String[] DuitangtabTitles = DuitangImage.tabTitles;
+	 private static final String[] DuitangtabIds = DuitangImage.tabIds;
+	 
 	 
 	  
 	  private void setupViewPager(ViewPager viewPager) {
@@ -48,6 +52,11 @@ public class MainActivity extends AppCompatActivity implements IAdView{
 	        for (int i = 0; i < DbmeinvtabTitles.length; i++) {
 	        	Fragment mfragment=PageSectionFragment.newInstance(DbmeinvtabIds[i],"dbmeinv");
 	            adapter.addFragment(mfragment, DbmeinvtabTitles[i]);
+	        }
+	        
+	        for (int i = 0; i <  DuitangtabTitles.length; i++) {
+	        	Fragment mfragment=PageSectionFragment.newInstance( DuitangtabIds[i],"duitang");
+	            adapter.addFragment(mfragment,  DuitangtabTitles[i]);
 	        }
 	        
 	        
