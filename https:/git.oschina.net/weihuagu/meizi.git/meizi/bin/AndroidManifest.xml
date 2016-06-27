@@ -40,6 +40,10 @@
             android:label="@string/app_name">
             
         </activity>
+           <activity
+            android:name=".WallPaperActivity"
+            android:label="@string/app_name"> 
+        </activity>
            
          <!-- 注册SDK的activity -->
          <activity 

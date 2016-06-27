@@ -1,6 +1,7 @@
 package com.weihuagu.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,11 +15,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.bumptech.glide.Glide;
+import com.weihuagu.meizi.AboutActivity;
 import com.weihuagu.meizi.R;
+import com.weihuagu.meizi.WallPaperActivity;
 import com.weihuagu.model.ImageInfo;
 import com.weihuagu.utils.Validator;
 
-public class GridViewAdapter extends BaseAdapter {
+public class GridViewAdapter extends BaseAdapter implements View.OnClickListener{
 	private List<ImageInfo> imgList=new ArrayList<ImageInfo>();
 	private Context mContext;
 	@Override
@@ -73,15 +76,18 @@ public class GridViewAdapter extends BaseAdapter {
              Glide.with(mContext).load(imgUrl).into(viewHolder.iv_img);
          }
 
-         viewHolder.iv_img.setOnClickListener(new View.OnClickListener(){
-             @Override
-             public void onClick(View view) {
-               //  Snackbar.make(view, "Image clicked, there will be a new page!", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
-             }
-         });
-
-		return view;
+         viewHolder.iv_img.setOnClickListener(this);
+		 return view;
 	}
+	
+	 @Override
+     public void onClick(View view) {
+    		
+       //  Snackbar.make(view, "Image clicked, there will be a new page!", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+			Intent wallpater=new Intent(this.mContext,WallPaperActivity.class);
+			this.mContext.startActivity(wallpater);
+     }
+
 	
 private  class ViewHolder {
           public ImageView iv_img;
