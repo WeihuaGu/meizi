@@ -4,12 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,44 +55,45 @@ public class GridViewAdapter extends BaseAdapter implements View.OnClickListener
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		 View view = convertView;
-		 final ViewHolder viewHolder;
+		 ViewHolder viewHolder;
 		 if (convertView == null) {
              view = LayoutInflater.from(mContext).inflate(R.layout.listview_row_item, parent, false);
              viewHolder = new ViewHolder();
-             viewHolder.iv_img = (ImageView) view.findViewById(R.id.img);
+             viewHolder.iv_img = (MyImageView ) view.findViewById(R.id.img);
              viewHolder.tv_title = (TextView) view.findViewById(R.id.img_title);
-
              view.setTag(viewHolder);
          } else {
              viewHolder = (ViewHolder) view.getTag();
          }
-		 final ImageInfo imgInfo = imgList.get(position);
+		 ImageInfo imgInfo = imgList.get(position);
          String title = imgInfo.getImgTitle();
          String imgUrl = imgInfo.getImgUrl();
 
          if (Validator.isEffective(title)) {
              viewHolder.tv_title.setText(title);
          }
-
+       
          if (Validator.isEffective(imgUrl)) {
-             Glide.with(mContext).load(imgUrl).into(viewHolder.iv_img);
+        	 Glide.with(mContext).load(imgUrl).into(viewHolder.iv_img);
          }
-
-         viewHolder.iv_img.setOnClickListener(this);
+ 
+         viewHolder.iv_img.setImgUrl(imgUrl);
+         viewHolder.iv_img.setOnClickListener(this);        
 		 return view;
 	}
 	
 	 @Override
      public void onClick(View view) {
     		
-       //  Snackbar.make(view, "Image clicked, there will be a new page!", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+            MyImageView img=(MyImageView) view;
 			Intent wallpater=new Intent(this.mContext,WallPaperActivity.class);
+			wallpater.putExtra("imgurl", img.getImgUrl());
 			this.mContext.startActivity(wallpater);
      }
 
 	
 private  class ViewHolder {
-          public ImageView iv_img;
+          public MyImageView  iv_img;
           public TextView tv_title;
 }
 
