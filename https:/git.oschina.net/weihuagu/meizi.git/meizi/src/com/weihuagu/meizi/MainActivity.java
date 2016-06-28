@@ -54,10 +54,10 @@ public class MainActivity extends AppCompatActivity implements IAdView{
 	            adapter.addFragment(mfragment, DbmeinvtabTitles[i]);
 	        }
 	        
-	        for (int i = 0; i <  DuitangtabTitles.length; i++) {
-	        	Fragment mfragment=PageSectionFragment.newInstance( DuitangtabIds[i],"duitang");
-	            adapter.addFragment(mfragment,  DuitangtabTitles[i]);
-	        }
+	  //      for (int i = 0; i <  DuitangtabTitles.length; i++) {
+	    //    	Fragment mfragment=PageSectionFragment.newInstance( DuitangtabIds[i],"duitang");
+	  //          adapter.addFragment(mfragment,  DuitangtabTitles[i]);
+	  //      }
 	        
 	        
 	        viewPager.setAdapter(adapter);

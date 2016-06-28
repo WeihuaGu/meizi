@@ -71,9 +71,14 @@ public class WallPaperActivity extends AppCompatActivity  implements  BitmapAsyn
 		 try
 			{
 				wallpaperManager.setBitmap(image);
+				Toast toast=Toast.makeText(this, "设置壁纸成功", Toast.LENGTH_SHORT); 
+				toast.show();            
 			}
 			catch (IOException e)
+		         
 			{
+				Toast toast=Toast.makeText(this, "设置壁纸失败", Toast.LENGTH_SHORT); 
+				toast.show();    
 				e.printStackTrace();
 			}
 		

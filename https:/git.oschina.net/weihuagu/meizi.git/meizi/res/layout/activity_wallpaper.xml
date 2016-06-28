@@ -20,5 +20,5 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:onClick="setWallpaper"
-                android:text="setwallpapter" />
+                android:text="@string/setwallpater" />
 </FrameLayout>
