@@ -13,8 +13,13 @@ import com.weihuagu.model.IAdView;
 import com.weihuagu.model.TuchongImage;
 import com.weihuagu.view.AdListener;
 import com.weihuagu.view.PagerAdapter;
+
+import org.json.JSONObject;
+
 import com.baidu.appx.BDBannerAd;
 import com.baidu.appx.BDInterstitialAd;
+import com.baidu.mobads.AdView;
+import com.baidu.mobads.AdViewListener;
 import com.weihuagu.meizi.AboutActivity;
 import com.weihuagu.meizi.R;
 import android.app.ActionBar;
@@ -142,14 +147,38 @@ public class MainActivity extends AppCompatActivity implements IAdView{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	private BDBannerAd bannerview=null;
+	public AdView bannerview=null;
 	public void showBannerAd(){
 		if(this.Setting.getBoolean("ad", true)){
-		bannerview=new BDBannerAd(this, "dFUqWHAm6sTNt1R3yPlrXaDPVCiTkcem", "ZKMa6z9z8a5Buv2ohfxzF7cy");
-		TextView text=new TextView(getBaseContext());
-		bannerview.setAdSize(BDBannerAd.SIZE_FLEXIBLE);
-		bannerview.setAdListener(new Advertising("Banner"));
-		Log.v("ad", "adview new");
+			
+			 String adPlaceId = "2015351"; //  重要：请填上您的广告位ID，代码位错误会导致无法请求到广告
+			 bannerview = new AdView(this, adPlaceId);
+		        // 设置监听器
+			 bannerview.setListener(new AdViewListener() {
+		            public void onAdSwitch() {
+		                Log.v("ssp", "onAdSwitch");
+		            }
+
+		            public void onAdShow(JSONObject info) {
+		                // 广告已经渲染出来
+		                Log.v("ssp", "onAdShow " + info.toString());
+		            }
+		            
+		            public void onAdReady(AdView adView) {
+		                // 资源已经缓存完毕，还没有渲染出来
+		                Log.v("ssp", "onAdReady " + adView);
+		            }
+
+		            public void onAdFailed(String reason) {
+		                Log.v("ssp", "onAdFailed " + reason);
+		            }
+
+		            public void onAdClick(JSONObject info) {
+		                // Log.V("ssp", "onAdClick " + info.toString());
+
+		            }
+		        });
+		Log.v("ssp", "adview new");
 		ViewGroup  container = (LinearLayout)findViewById(R.id.adview_container);
 		container.addView(bannerview);
 		}
