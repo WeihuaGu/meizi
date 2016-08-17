@@ -5,11 +5,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-
-import com.weihuagu.model.Advertising;
 import com.weihuagu.model.DbmeinvImage;
 import com.weihuagu.model.DuitangImage;
-import com.weihuagu.model.IAdView;
 import com.weihuagu.model.TuchongImage;
 import com.weihuagu.view.AdListener;
 import com.weihuagu.view.PagerAdapter;
@@ -35,7 +32,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements IAdView{
+public class MainActivity extends AppCompatActivity{
 	 private SharedPreferences  Setting=null;
 	 private static final String[] TuchuangtabTitles = TuchongImage.tabTitles;
 	 private static final String[] TuchuangtabIds = TuchongImage.tabIds;
@@ -74,7 +71,6 @@ public class MainActivity extends AppCompatActivity implements IAdView{
 		setContentView(R.layout.activity_main);
 		this.initSetting();
 		this.initUiResouces();
-		this.showBannerAd();
 		
 	}
 	@Override
@@ -139,82 +135,5 @@ public class MainActivity extends AppCompatActivity implements IAdView{
            }
        
 	}
-
-	
-	
-	@Override
-	public View getAdView() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	public AdView bannerview=null;
-	public void showBannerAd(){
-		if(this.Setting.getBoolean("ad", true)){
-			
-			 String adPlaceId = "2792517"; //  重要：请填上您的广告位ID，代码位错误会导致无法请求到广告
-			 bannerview = new AdView(this, adPlaceId);
-		        // 设置监听器
-			 bannerview.setListener(new AdViewListener() {
-		            public void onAdSwitch() {
-		                Log.v("ssp", "onAdSwitch");
-		            }
-
-		            public void onAdShow(JSONObject info) {
-		                // 广告已经渲染出来
-		                Log.v("ssp", "onAdShow " + info.toString());
-		            }
-		            
-		            public void onAdReady(AdView adView) {
-		                // 资源已经缓存完毕，还没有渲染出来
-		                Log.v("ssp", "onAdReady " + adView);
-		            }
-
-		            public void onAdFailed(String reason) {
-		                Log.v("ssp", "onAdFailed " + reason);
-		            }
-
-		            public void onAdClick(JSONObject info) {
-		                 Log.v("ssp", "onAdClick " + info.toString());
-
-		            }
-		        });
-		Log.v("ssp", "adview new");
-		ViewGroup  container = (LinearLayout)findViewById(R.id.adview_container);
-		container.addView(bannerview);
-		}
-		
-	}
-	public void hideBannerAd(){
-		if (bannerview != null) {
-			ViewGroup  container = (LinearLayout)findViewById(R.id.adview_container);
-			container.removeAllViews();
-			bannerview.destroy();
-			bannerview = null;
-		}
-		
-		
-	}
-	@Override
-	protected void onDestroy() {
-		if (bannerview != null) {
-			bannerview.destroy();
-		}
-		super.onDestroy();
-	}
-	@Override
-	protected void onRestart(){
-		if(this.Setting.getBoolean("ad", true)){
-			if(this.bannerview==null)
-			this.showBannerAd();
-		}
-		
-		if(!this.Setting.getBoolean("ad", true)){
-			this.hideBannerAd();
-			
-		}
-		super.onRestart();
-		
-	}
-	
 	
 }
