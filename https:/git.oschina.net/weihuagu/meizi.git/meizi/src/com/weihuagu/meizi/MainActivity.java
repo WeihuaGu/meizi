@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements IAdView{
 	public void showBannerAd(){
 		if(this.Setting.getBoolean("ad", true)){
 			
-			 String adPlaceId = "2015351"; //  重要：请填上您的广告位ID，代码位错误会导致无法请求到广告
+			 String adPlaceId = "2792517"; //  重要：请填上您的广告位ID，代码位错误会导致无法请求到广告
 			 bannerview = new AdView(this, adPlaceId);
 		        // 设置监听器
 			 bannerview.setListener(new AdViewListener() {
@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity implements IAdView{
 		            }
 
 		            public void onAdClick(JSONObject info) {
-		                // Log.V("ssp", "onAdClick " + info.toString());
+		                 Log.v("ssp", "onAdClick " + info.toString());
 
 		            }
 		        });
