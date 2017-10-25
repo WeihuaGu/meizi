@@ -1,9 +1,16 @@
-#meizi
+# meizi
+
 一个用安卓看妹子图片的应用。
-发布在百度手机助手，下载网址：http://shouji.baidu.com/software/9593956.html
-由于最新发布在百度，所以最新修改过的分支，一般是在adbaidu分支。
-由于已经发布，代码中嵌入了自己的广告id，在此郑重声明：请不要复制、使用本人广告id、不要使用本广告id进行广告测试！
+
+最新发布在酷安，下载[网址](https://www.coolapk.com/apk/com.weihuagu.meizi)
+
+
+由于已经发布，studiowithbaiduad分支中嵌入了自己的广告id，在此郑重声明：请不要复制、使用本人广告id、不要使用本广告id进行广告测试！
+
 本软件使用MPL License(Mozilla Public License)开源协议
+
+代码放到了开源中国的git仓库，项目[地址](https://gitee.com/weihuagu/meizi/tree/master)
+
 
 |  1            |     2         | 
 | ------------- |:-------------:|
